@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peluquería Tupelo · Toledo</title>
+<meta name="description" content="Peluquería Tupelo en Toledo. Peluquería clásica y tradicional. Corte de pelo por 12 €. Calle Duque de Ahumada 5. Horario, teléfono y cómo llegar.">
+<meta name="theme-color" content="#F5F0E6">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Peluquería Tupelo · Toledo">
+<meta property="og:description" content="Peluquería clásica en la calle Duque de Ahumada, 5. Corte de pelo por 12 €. Tel. 925 22 32 02.">
+<meta property="og:url" content="https://peluqueria-tupelo.netlify.app/">
+<meta property="og:image" content="https://peluqueria-tupelo.netlify.app/img/local-tupelo.jpg">
+<link rel="canonical" href="https://peluqueria-tupelo.netlify.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23A6231C'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23FFF8EC'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Barlow:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Peluquería Tupelo",
+  "telephone": "+34 925 22 32 02",
+  "priceRange": "€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Duque de Ahumada, 5",
+    "postalCode": "45005",
+    "addressLocality": "Toledo",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "17:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": { "@type": "Service", "name": "Corte de pelo" },
+    "price": "12",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+<style>
+/* Layout: barra fija con marca y teléfono; portada en dos columnas (texto + tarifa | foto); horario y dirección lado a lado; historia; pie oscuro. En móvil todo se apila. */
+:root {
+  --bg: #F5F0E6;        /* marfil */
+  --paper: #FFFDF8;     /* tarjetas */
+  --fg: #1C1A20;        /* tinta */
+  --muted: #6B6570;
+  --red: #A6231C;       /* rojo poste de barbero */
+  --blue: #1F4468;      /* azul poste de barbero */
+  --gold: #B8902A;      /* resalte del día de hoy */
+  --line: #E2D9C8;
+  --band: #1C1A20;      /* pie y cartel de tarifa */
+  --band-fg: #F2ECE0;
+  --band-line: rgba(242, 236, 224, .28);
+  --shadow: rgba(28, 26, 32, .28);
+  --open: #2F7A3E;
+  --closed: #9E3129;
+  --display: "Bodoni Moda", "Bodoni 72", "Didot", Georgia, serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141216; --paper: #1E1B21; --fg: #F2ECE0; --muted: #A79FA9;
+    --red: #E2574B; --blue: #8DB5DD; --gold: #DDB64A; --line: #34303A;
+    --band: #0C0B0E; --band-fg: #F2ECE0; --band-line: rgba(242, 236, 224, .22);
+    --shadow: rgba(0, 0, 0, .6); --open: #6CC47E; --closed: #F08A80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141216; --paper: #1E1B21; --fg: #F2ECE0; --muted: #A79FA9;
+  --red: #E2574B; --blue: #8DB5DD; --gold: #DDB64A; --line: #34303A;
+  --band: #0C0B0E; --band-fg: #F2ECE0; --band-line: rgba(242, 236, 224, .22);
+  --shadow: rgba(0, 0, 0, .6); --open: #6CC47E; --closed: #F08A80;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-block: 0 env(safe-area-inset-bottom, 0px);
+}
+img { max-width: 100%; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding-inline: 1.25rem; }
+@media (min-width: 40rem) { .wrap { padding-inline: 2rem; } }
+
+.label {
+  font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin: 0;
+}
+
+/* ── Barra superior ── */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.bar-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; }
+.brand { display: flex; align-items: baseline; gap: .6rem; text-decoration: none; margin-right: auto; }
+.brand b { font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1; color: var(--red); }
+.brand span { display: none; }
+.nav { display: none; gap: 1.75rem; }
+.nav a { text-decoration: none; font-weight: 500; font-size: .98rem; color: var(--muted); transition: color .15s; }
+.nav a:hover { color: var(--fg); }
+@media (min-width: 40rem) { .brand span { display: inline; } }
+@media (min-width: 56rem) { .nav { display: flex; } }
+.pole {
+  height: 4px;
+  background: repeating-linear-gradient(135deg, var(--red) 0 14px, var(--paper) 14px 28px, var(--blue) 28px 42px, var(--paper) 42px 56px);
+}
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  padding: .95rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1.05rem; letter-spacing: .01em;
+  border: 1.5px solid var(--fg); color: var(--fg); background: transparent;
+  font-variant-numeric: tabular-nums; transition: background-color .15s, color .15s, border-color .15s;
+}
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn.primary { background: var(--red); border-color: var(--red); color: #FFF8EC; }
+.btn.primary:hover { background: color-mix(in srgb, var(--red) 82%, #000); border-color: color-mix(in srgb, var(--red) 82%, #000); }
+.btn svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.btn.small { padding: .55rem 1rem; font-size: .95rem; }
+.btn.small svg { width: 17px; height: 17px; }
+
+/* ── Portada ── */
+.hero {
+  display: grid; gap: 2rem;
+  grid-template-areas: "text" "photo" "board";
+  padding-block: 2.75rem 3.5rem;
+}
+.hero-text { grid-area: text; display: grid; gap: .9rem; justify-items: start; min-width: 0; }
+.hero h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(4rem, 17vw, 7.5rem); line-height: .9; letter-spacing: -.01em;
+  margin: 0; color: var(--red);
+}
+.hero .tag { font-size: 1.2rem; margin: 0; color: var(--fg); }
+.status {
+  display: inline-flex; align-items: center; gap: .55rem; margin: 0;
+  font-weight: 600; font-size: .98rem;
+}
+.status .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; }
+.status.open { color: var(--open); } .status.open .dot { background: var(--open); box-shadow: 0 0 0 4px color-mix(in srgb, var(--open) 20%, transparent); }
+.status.closed { color: var(--closed); } .status.closed .dot { background: var(--closed); }
+.status small { font-weight: 400; color: var(--muted); font-size: 1em; }
+.hero .status { padding: .4rem .85rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .6rem; width: 100%; }
+.actions .btn { flex: 1 1 14rem; }
+
+.hero-photo { grid-area: photo; margin: 0; min-width: 0; }
+.hero-photo img {
+  display: block; width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 58%;
+  border-radius: 4px; box-shadow: 0 1px 2px var(--shadow), 0 24px 48px -24px var(--shadow);
+}
+
+/* Tarifa como un cartel esmaltado: fondo oscuro y filete interior */
+.board {
+  grid-area: board; align-self: start; min-width: 0; display: grid;
+  background: var(--band); color: var(--band-fg);
+  border: 1px solid var(--line); border-radius: 4px; padding: .5rem;
+}
+.board > * { margin: 0; }
+.board h2 {
+  padding: 1.25rem 1.5rem .25rem; color: var(--band-fg);
+  font-family: var(--body); font-weight: 600; font-size: .78rem; letter-spacing: .24em; text-transform: uppercase;
+  border: 1px solid var(--band-line); border-bottom: 0; border-radius: 2px 2px 0 0;
+}
+.board .row {
+  display: flex; align-items: baseline; gap: .6rem; padding: .5rem 1.5rem;
+  font-size: 1.3rem; font-weight: 500;
+  border-inline: 1px solid var(--band-line);
+}
+.board .leader { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted var(--band-line); transform: translateY(-.3em); }
+.board .amount { font-family: var(--display); font-weight: 700; font-size: 2.6rem; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.board .fine {
+  padding: .25rem 1.5rem 1.25rem; font-size: .88rem; opacity: .7;
+  border: 1px solid var(--band-line); border-top: 0; border-radius: 0 0 2px 2px;
+}
+
+@media (min-width: 52rem) {
+  .hero {
+    grid-template-columns: 1.1fr .9fr;
+    grid-template-areas: "text photo" "board photo";
+    column-gap: 4rem; row-gap: 2.25rem;
+    padding-block: 4.5rem 5rem;
+  }
+  .hero-text { align-self: end; }
+  .hero-photo img { aspect-ratio: 3 / 4; }
+}
+
+/* ── Secciones ── */
+.section { padding-block: 3.5rem; border-top: 1px solid var(--line); scroll-margin-top: 4.5rem; }
+.title {
+  font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.4rem); line-height: 1.1;
+  margin: 0 0 1.5rem; color: var(--fg); text-wrap: balance;
+}
+.title::after { content: ""; display: block; width: 2.5rem; height: 2px; background: var(--red); margin-top: .85rem; }
+
+.info { display: grid; gap: 3.5rem; }
+.info > div { min-width: 0; scroll-margin-top: 5rem; }
+@media (min-width: 52rem) { .info { grid-template-columns: 1.25fr 1fr; gap: 4rem; } }
+.info .status { margin-bottom: 1rem; }
+
+table.hours {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.hours td { padding: .8rem 1.1rem; border-top: 1px solid var(--line); vertical-align: top; }
+.hours tr:first-child td { border-top: 0; }
+.hours td:first-child { font-weight: 600; text-transform: capitalize; width: 38%; }
+.hours td:last-child { text-align: right; }
+.hours tr.today td { background: color-mix(in srgb, var(--gold) 14%, var(--paper)); }
+.hours tr.today td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+.hours tr.today td:first-child::after { content: " · hoy"; font-weight: 400; color: var(--muted); font-size: .9em; text-transform: none; }
+.hours .closed-day { color: var(--muted); }
+.note { color: var(--muted); margin: .9rem 0 0; font-size: .98rem; }
+
+address { font-style: normal; font-size: 1.15rem; line-height: 1.5; margin-bottom: 1.5rem; }
+address strong { display: block; font-family: var(--display); font-weight: 500; font-size: 1.6rem; line-height: 1.25; margin-bottom: .2rem; }
+.contact { display: grid; gap: .75rem; justify-items: start; }
+.contact .phone-line { font-size: 1.1rem; margin: 0; font-variant-numeric: tabular-nums; }
+.contact .phone-line a { font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line); }
+.contact .phone-line a:hover { border-color: var(--red); }
+
+/* Historia: texto y foto; en pantallas anchas, lado a lado */
+.story { display: grid; gap: 2rem; }
+.story-text { min-width: 0; }
+.story-text p { margin: 0 0 1.1rem; max-width: 60ch; }
+.story .lede { font-size: 1.3rem; line-height: 1.5; font-weight: 500; }
+.story .motto {
+  font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.6rem; line-height: 1.25; color: var(--red);
+  margin: 1.75rem 0 0;
+}
+.photo { margin: 0; min-width: 0; }
+.photo img {
+  display: block; width: 100%; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 38%;
+  border-radius: 4px; box-shadow: 0 1px 2px var(--shadow), 0 24px 48px -24px var(--shadow);
+}
+@media (min-width: 52rem) {
+  .story { grid-template-columns: 1.25fr 1fr; gap: 4rem; align-items: center; }
+  .photo img { aspect-ratio: 4 / 5; object-position: 40% 50%; }
+}
+
+/* ── Pie ── */
+.footer { background: var(--band); color: var(--band-fg); margin-top: 1rem; }
+.footer .pole { height: 4px; }
+.footer-grid { display: grid; gap: 2rem; padding-block: 3rem 2rem; }
+.footer-grid > div { min-width: 0; }
+.footer .label { color: color-mix(in srgb, var(--band-fg) 60%, transparent); margin-bottom: .6rem; }
+.footer p { margin: 0; }
+.footer .f-brand b { font-family: var(--display); font-weight: 700; font-size: 2rem; line-height: 1; display: block; margin-bottom: .5rem; }
+.footer .f-brand i { font-family: var(--display); color: color-mix(in srgb, var(--band-fg) 75%, transparent); }
+.footer a { text-decoration: none; border-bottom: 1px solid var(--band-line); }
+.footer a:hover { border-color: var(--band-fg); }
+.footer .f-phone { font-size: 1.3rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.footer .f-hours { font-variant-numeric: tabular-nums; line-height: 1.7; }
+.footer-bottom {
+  border-top: 1px solid var(--band-line); padding-block: 1.25rem 1.75rem;
+  font-size: .88rem; color: color-mix(in srgb, var(--band-fg) 55%, transparent);
+}
+@media (min-width: 46rem) { .footer-grid { grid-template-columns: 1.2fr 1fr 1fr 1.2fr; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-text > * { animation: rise .6s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero-text > :nth-child(2) { animation-delay: .06s; }
+  .hero-text > :nth-child(3) { animation-delay: .12s; }
+  .hero-text > :nth-child(4) { animation-delay: .18s; }
+  .hero-text > :nth-child(5) { animation-delay: .24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="#inicio"><b>Tupelo</b><span class="label">Peluquería · Toledo</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#tarifa">Tarifa</a>
+      <a href="#horario">Horario</a>
+      <a href="#donde">Dónde estamos</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <a class="btn primary small" href="tel:+34925223202">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Llamar
+    </a>
+  </div>
+  <div class="pole" aria-hidden="true"></div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <p class="label">Peluquería</p>
+      <h1>Tupelo</h1>
+      <p class="tag">Calle Duque de Ahumada, 5 · Toledo</p>
+      <p class="status" data-status aria-live="polite"><span class="dot"></span><span class="status-text">Consultando horario…</span></p>
+      <div class="actions">
+        <a class="btn primary" href="tel:+34925223202">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Llamar · 925 22 32 02
+        </a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa+Tupelo%2C+Calle+Duque+de+Ahumada+5%2C+45005+Toledo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+    </div>
+
+    <figure class="hero-photo">
+      <img src="img/local-tupelo.jpg" width="350" height="580" alt="Interior de la peluquería Tupelo: pared de ladrillo con fotos en blanco y negro, una jukebox iluminada y un sofá rojo para esperar">
+    </figure>
+
+    <div class="board" id="tarifa">
+      <h2>Tarifa</h2>
+      <p class="row"><span>Corte de pelo</span><span class="leader" aria-hidden="true"></span><span class="amount">12 €</span></p>
+      <p class="fine">IVA incluido</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap info">
+      <div id="horario">
+        <h2 class="title">Horario</h2>
+        <p class="status" data-status><span class="dot"></span><span class="status-text">Consultando horario…</span></p>
+        <table class="hours" id="hours">
+          <tbody>
+            <tr data-day="1"><td>lunes</td><td>10:00–14:00 y 17:00–20:00</td></tr>
+            <tr data-day="2"><td>martes</td><td>10:00–14:00 y 17:00–20:00</td></tr>
+            <tr data-day="3"><td>miércoles</td><td>10:00–14:00 y 17:00–20:00</td></tr>
+            <tr data-day="4"><td>jueves</td><td>10:00–14:00 y 17:00–20:00</td></tr>
+            <tr data-day="5"><td>viernes</td><td>10:00–14:00 y 17:00–20:00</td></tr>
+            <tr data-day="6"><td>sábado</td><td>10:00–14:00</td></tr>
+            <tr data-day="0"><td>domingo</td><td class="closed-day">Cerrado</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Si tienes dudas, llama antes de venir.</p>
+      </div>
+
+      <div id="donde">
+        <h2 class="title">Dónde estamos</h2>
+        <address>
+          <strong>Calle Duque de Ahumada, 5</strong>
+          45005 Toledo
+        </address>
+        <div class="contact">
+          <p class="phone-line">Teléfono: <a href="tel:+34925223202">925 22 32 02</a></p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa+Tupelo%2C+Calle+Duque+de+Ahumada+5%2C+45005+Toledo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="wrap story">
+      <div class="story-text">
+        <h2 class="title">Peluquería de las de antes</h2>
+        <p class="lede">Tupelo es una peluquería clásica. Aquí el pelo se corta con tijera y peine, con calma y mirando cada cabeza.</p>
+        <p>Se trabaja a la manera tradicional: escuchar lo que quieres, cortar con oficio y que salgas a la calle bien peinado. Sin prisas y sin cortes de catálogo.</p>
+        <p>El local también es de los de antes. Ladrillo visto, fotos en blanco y negro en las paredes y un sofá para esperar tu turno con tranquilidad.</p>
+        <p class="motto">Un buen corte no pasa de moda.</p>
+      </div>
+      <figure class="photo">
+        <img src="img/en-el-sillon.jpg" width="600" height="800" loading="lazy" alt="Peluquero peinando a un cliente con el secador, reflejados en el espejo de la peluquería">
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="pole" aria-hidden="true"></div>
+  <div class="wrap footer-grid">
+    <div class="f-brand">
+      <b>Tupelo</b>
+      <i>Un buen corte no pasa de moda.</i>
+    </div>
+    <div>
+      <p class="label">Dirección</p>
+      <p>Calle Duque de Ahumada, 5<br>45005 Toledo</p>
+    </div>
+    <div>
+      <p class="label">Teléfono</p>
+      <p><a class="f-phone" href="tel:+34925223202">925 22 32 02</a></p>
+    </div>
+    <div>
+      <p class="label">Horario</p>
+      <p class="f-hours">Lunes a viernes: 10:00–14:00 y 17:00–20:00<br>Sábado: 10:00–14:00<br>Domingo: cerrado</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">© <span id="year">2026</span> Peluquería Tupelo · Toledo</div>
+</footer>
+
+<script>
+(function () {
+  // Horario en minutos desde medianoche, hora de Madrid. 0 = domingo.
+  var hours = {
+    1: [[600, 840], [1020, 1200]], 2: [[600, 840], [1020, 1200]], 3: [[600, 840], [1020, 1200]],
+    4: [[600, 840], [1020, 1200]], 5: [[600, 840], [1020, 1200]], 6: [[600, 840]], 0: []
+  };
+  var dayNames = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  function fmt(m) { return Math.floor(m / 60) + ':' + ('0' + (m % 60)).slice(-2); }
+  function madridNow() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Madrid', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+      var get = function (t) { return parts.filter(function (p) { return p.type === t; })[0].value; };
+      var wd = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[get('weekday')];
+      if (wd === undefined) throw new Error('weekday');
+      return { day: wd, min: (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10) };
+    } catch (e) { var d = new Date(); return { day: d.getDay(), min: d.getHours() * 60 + d.getMinutes() }; }
+  }
+  var now = madridNow();
+  var row = document.querySelector('#hours tr[data-day="' + now.day + '"]');
+  if (row) row.classList.add('today');
+
+  var today = hours[now.day], msg = '', cls = 'closed';
+  for (var i = 0; i < today.length; i++) {
+    if (now.min >= today[i][0] && now.min < today[i][1]) { cls = 'open'; msg = 'Abierto ahora <small>· cierra a las ' + fmt(today[i][1]) + '</small>'; break; }
+    if (now.min < today[i][0]) { msg = 'Cerrado ahora <small>· abre hoy a las ' + fmt(today[i][0]) + '</small>'; break; }
+  }
+  if (!msg) {
+    for (var d = 1; d <= 7; d++) {
+      var next = (now.day + d) % 7;
+      if (hours[next].length) { msg = 'Cerrado ahora <small>· abre ' + (d === 1 ? 'mañana' : 'el ' + dayNames[next]) + ' a las ' + fmt(hours[next][0][0]) + '</small>'; break; }
+    }
+  }
+  document.querySelectorAll('[data-status]').forEach(function (el) {
+    el.classList.add(cls);
+    el.querySelector('.status-text').innerHTML = msg;
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
